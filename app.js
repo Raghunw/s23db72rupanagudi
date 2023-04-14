@@ -19,9 +19,8 @@ var usersRouter = require('./routes/users');
 var birdsRouter = require('./routes/birds');
 var boardRouter = require('./routes/board');
 var selectorRouter = require('./routes/selector');
-var birdsRouter = require("./models/birds");
 var resourceRouter = require("./routes/resource");
-const birds = require('./models/birds');
+var birds = require('./models/birds');
 
 
 //Get the default connection

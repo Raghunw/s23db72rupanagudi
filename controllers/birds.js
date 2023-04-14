@@ -16,6 +16,6 @@ exports.birds_delete = function(req, res) {
  res.send('NOT IMPLEMENTED: birds delete DELETE ' + req.params.id);
 };
 // Handle Costume update form on PUT.
-exports.birdse_update_put = function(req, res) {
+exports.birds_update_put = function(req, res) {
  res.send('NOT IMPLEMENTED: birds update PUT' + req.params.id);
 };
