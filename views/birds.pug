@@ -2,10 +2,10 @@ extends layout
 
 block content
   h1= title
-  - var birds=[{Name:"Sparrow",LifeSpan:"5",Speed:40},{Name:"Parrot",LifeSpan:"6",Speed:45},{Name:"Eagle",LifeSpan:"7",Speed:50}]
+  - var bi= results
   div(class="container-fluid")
   div(class="row")
-   each b,index  in birds
+   each b,index  in bi
     div(class="col-sm-2" onclick =`buy(${index})`) #{b.Name}, #{b.LifeSpan}, #{b.Speed}
     script.
         function buy(a)

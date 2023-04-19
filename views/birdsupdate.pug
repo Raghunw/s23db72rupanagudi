@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1= title
+  - let birdsid = toShow._id
+  - let Name = toShow.Name
+  - let LifeSpan = toShow.LifeSpan
+  - let Speed = toShow.Speed
+  div.row(class='mb-2')
+    div.mr-1 ID is
+    div #{birdsid}
+  - let actionid = "/resource/birds/" + birdsid
+  form(id='birdsForm', action= actionid, method="PUT")
+    div.form-group
+      label.birdsAttr(for='Name') birds name
+      input#Name(type='text', name='Name', value= Name )
+    div.form-group
+      label.birdsAttr(for='LifeSpan') birds lifespan
+      input#LifeSpan(type='text', name='LifeSpan', value= LifeSpan )
+    div.form-group
+      label.birdsAttr(for='Speed') birds speed
+      input#Speed(type='number', name='Speed', value= Speed )
+    input(type="submit")
+  script.
+    document.forms['birdsForm'].addEventListener('submit', (event) => {
+      event.preventDefault();
+      // TODO do something here to show user that form is being submitted
+      fetch(event.target.action, {
+        method: 'PUT',
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+      }).then((resp) => {
+        return resp.json(); // or resp.text() or whatever the server sends
+      }).then((body) => {
+        alert("Update succeeded")
+        // TODO handle body
+      }).catch((error) => {
+        // TODO handle error
+        alert("Update failed " + error)
+      });
+    });

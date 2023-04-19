@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+.birdsAttr {
+  background-color: aquamarine;
+  width: 120px;
+  }
+  .birdsAttr {
+    background-color: rgb(130, 168, 238);
+    width: 120px;
+    }
+  
+    #birdsForm {
+      background-color:rgb(237, 14, 47);
+      width: 325px;
+    }
+    
+    h1{
+      color: rgb(114, 218, 29);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  

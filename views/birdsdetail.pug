@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  - let birdsid = toShow._id
+  - let Name = toShow.Name
+  - let LifeSpan = toShow.LifeSpan
+  - let Speed = toShow.Speed
+  div
+    div.row
+      div(class='birdsAttr mr-3') birds ID is:
+      div #{birdsid}
+    div.row
+      div(class='birdsAttr mr-3') birds name is:
+      div #{Name}
+    div.row
+      div(class='birdsAttr mr-3') birds lifespan is:
+      div #{LifeSpan}
+    div.row
+      div(class='birdsAttr mr-3') birds speed is:
+      div #{Speed}
