@@ -1,14 +1,37 @@
+//- extends layout
+
+//- block content
+//-   h1= title
+//-   - var bi= results
+//-   div(class="container-fluid")
+//-     div(class="row m-1")
+//-       each b, index in bi
+//-         - let destination = 'dispatch("/birds/update?id=${item._id}")'
+//-         div(class="col-sm-2" onclick=`buy(${index})`) #{b.Name}, #{b.LifeSpan}, #{b.Speed}
+//-         button.btn(class="btn-primary ml-1", onclick=destination) Update
+//-       script.
+//-         function buy(a){
+//-           alert(`You purchased Item ${a+1}`)
+//-         }
+//-       script.
+//-         function dispatch(path){
+//-           window.location.href=path
+//-         }
+
+
 extends layout
 
 block content
   h1= title
-  - var bi= results
+  -let items = results
   div(class="container-fluid")
-  div(class="row")
-   each b,index  in bi
-    div(class="col-sm-2" onclick =`buy(${index})`) #{b.Name}, #{b.LifeSpan}, #{b.Speed}
-    script.
-        function buy(a)
-        {
-            alert(`You purchased Item ${a+1}`)
-        }
+   div(class="row m-1")
+    each item in items
+     - let destination = `dispatch(\"/birds/update?id=${item._id}\")`
+     div(class="row-sm-2", class="m-1") Item #{item.Name}(#{item.LifeSpan}) is #{item.Speed}
+      button.btn( class="btn-primary ml-1", onclick= destination) Update
+
+  script.
+   function dispatch(path){
+     window.location.href=path
+   }
