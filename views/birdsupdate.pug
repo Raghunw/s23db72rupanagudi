@@ -6,9 +6,9 @@ block content
     h2 No instance for detail
   else 
     - let birdsid = toShow._id
-    - let birds_Name = toShow.birds_Name
-    - let birds_LifeSpan = toShow.birds_LifeSpan
-    - let birds_Speed = toShow.birds_Speed
+    - let birds_Name = toShow.Name
+    - let birds_LifeSpan = toShow.LifeSpan
+    - let birds_Speed = toShow.Speed
 
     div.row(class='mb-2')
       div.mr-1 ID is
@@ -17,13 +17,13 @@ block content
       form(id='birdsForm', action= actionid, method="PUT")
         div.form-group
           label.birdsAttr(for='birds_Name') birds Name
-          input#birds_Name(type='text', name='birds_Name', value= birds_Name )
+          input#birds_Name(type='text', name='Name', value= birds_Name )
         div.form-group
           label.birdsAttr(for='birds_LifeSpan') LifeSpan of birds is
-          input#birds_LifeSpan(type='text', name='birds_LifeSpan', value= birds_LifeSpan )
+          input#birds_LifeSpan(type='text', name='LifeSpan', value= birds_LifeSpan )
         div.form-group
           label.birdsAttr(for='birds_Speed') birds speed is
-          input#birds_Speed(type='number', name='birds_Speed', value= birds_Speed )
+          input#birds_Speed(type='number', name='Speed', value= birds_Speed )
         input(type="submit")
         script.
           document.forms['birdsForm'].addEventListener('submit', (event) => {
