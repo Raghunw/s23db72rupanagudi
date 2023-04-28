@@ -19,7 +19,7 @@ req.session.returnTo = req.originalUrl;
 res.redirect("/login");
 }
 
-module.exports = router;
+
 /* GET detail costume page */
 router.get('/detail',secured, birds_controlers.birds_view_one_Page);
 /* GET create costume page */
@@ -28,3 +28,4 @@ router.get('/create',secured, birds_controlers.birds_create_Page);
 router.get('/update',secured, birds_controlers.birds_update_Page);
 /* GET delete costume page */
 router.get('/delete',secured, birds_controlers.birds_delete_Page);
+module.exports = router;
